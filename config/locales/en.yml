@@ -35,4 +35,6 @@ en:
     password: password
     login: Login
     submit: Login/Register
-  user_created: 'An user has been created successfully!'
+  links:
+    share_movie: Share a movie
+    logout: Logout
