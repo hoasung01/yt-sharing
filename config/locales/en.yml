@@ -30,4 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  registration:
+    email: email
+    password: password
+    submit: Login/Register
