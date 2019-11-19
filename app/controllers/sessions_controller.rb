@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      user = create_user
+      user = CreateUserService.new(params).()
       session[:user_id] = user.id
       redirect_to root_path
     end
@@ -14,13 +14,5 @@ class SessionsController < ApplicationController
 
   def user
     @user ||= User.find_by_email(params[:email])
-  end
-
-  def create_user
-    user = User.new
-    user.email = params[:email]
-    user.password = params[:password]
-    user.save
-    user
   end
 end
