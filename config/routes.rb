@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'sessions#visitor'
   post :login, to: 'sessions#create'
   delete :logout, to: 'sessions#destroy'
+  get :share, to: 'videos#new'
 end

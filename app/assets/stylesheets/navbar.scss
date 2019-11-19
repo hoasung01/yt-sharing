@@ -2,4 +2,12 @@
   .login-form {
     display: flex;
   }
+
+  .movie-sharing-navbar {
+    display: flex;
+    .welcome-message {
+      margin: auto 0;
+      color: white;
+    }
+  }
 }

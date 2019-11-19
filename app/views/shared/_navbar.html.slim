@@ -2,9 +2,14 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
   .container
     a.navbar-brand href="#" Funny Movies
     - if current_user
-      = "Welcome #{current_user.email}"
-      = link_to 'Share a movie', '#'
-      = link_to 'Logout', '/logout', method: :delete
+      .movie-sharing-navbar
+        .form-row
+          .welcome-message
+            ="Welcome #{current_user.email}"
+          .col
+            = link_to 'Share a movie', '/share', class: 'btn btn-info'
+          .col
+            = link_to 'Logout', '/logout', method: :delete, class: 'btn btn-danger'
     - else
       = form_tag '/login', class: 'login-form navbar-form navbar-right'
         .form-row
@@ -13,4 +18,4 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
           .col
             = password_field_tag :password, placeholder="#{t('registration.password')}", class: 'form-control'
           .col
-            = submit_tag t('registration.submit'), class: 'btn btn btn-default'
+            = submit_tag t('registration.submit'), class: 'btn btn-default'
