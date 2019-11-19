@@ -1,0 +1,11 @@
+.container
+  fieldset.movive-sharing-form.col-sm-6
+    legend #{t('videos.form.title')}
+    = form_tag '/videos'
+      .form-group.row
+        = label_tag t('links.youtube_url'), nil, class: 'col-sm-3 col-form-label'
+        .col-sm-9
+          = text_field_tag :link, nil, class: 'form-control'
+      .form-group.row
+        .col-sm-9.offset-3
+          = submit_tag t('videos.form.submit'), class: 'btn btn-primary form-control'
