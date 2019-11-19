@@ -1,2 +1,6 @@
-h1 Videos#index
-p Find me in app/views/videos/index.html.slim
+.container
+  .row.movie_listing
+    - @videos.each do |video|
+      .col-md-6
+        = video_tag video.link, size: "320x240", controls: true
+      .col-md-6
