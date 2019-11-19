@@ -1,3 +1,10 @@
+require 'bcrypt'
+
 class User < ApplicationRecord
-  has_secure_password
+  include BCrypt
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_digest = @password
+  end
 end
