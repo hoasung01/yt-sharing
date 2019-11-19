@@ -33,4 +33,6 @@ en:
   registration:
     email: email
     password: password
+    login: Login
     submit: Login/Register
+  user_created: 'An user has been created successfully!'
