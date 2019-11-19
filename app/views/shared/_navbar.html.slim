@@ -2,8 +2,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
   .container
     a.navbar-brand href="#" Funny Movies
     - if current_user
-      h1
-        = "Welcome #{current_user.email}"
+      = "Welcome #{current_user.email}"
+      = link_to 'Share a movie', '#'
+      = link_to 'Logout', '/logout', method: :delete
     - else
       = form_tag '/login', class: 'login-form navbar-form navbar-right'
         .form-row
