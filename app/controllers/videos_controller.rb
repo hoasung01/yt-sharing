@@ -2,9 +2,23 @@ class VideosController < ApplicationController
   def index
   end
 
-  def create
+  def new
+    @video = Video.new
   end
 
-  def new
+  def create
+    @video = Video.new(video_params.merge(user_id: current_user.id))
+
+    if @video.save
+      redirect_to videos_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def video_params
+    params.require(:video).permit(:link)
   end
 end
