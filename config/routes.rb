@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   resources :videos, only: :index
   root 'sessions#visitor'
-  post 'login', to: 'sessions#create'
+  post :login, to: 'sessions#create'
+  delete :logout, to: 'sessions#destroy'
 end
