@@ -6,5 +6,8 @@
         = video_tag video.link, size: "320x240", controls: true
       .col-md-6.movie-listing__right-panel
         p= t('videos.title')
-        = "Shared by: #{video_decorator.shared_by}"
+        p= "Shared by: #{video_decorator.shared_by}"
+        .row
+          .upvote.col-md-3= "Upvote: #{video.upvote}"
+          .downvote.col-md-3= "Downvote: #{video.downvote}"
         p= t('videos.description')
