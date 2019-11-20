@@ -10,6 +10,9 @@
   }
 }
 
-.movie_listing {
+.movie-listing {
   padding-top: 100px;
+  &__left-panel {
+    text-align: right;
+  }
 }

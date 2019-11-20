@@ -1,6 +1,12 @@
 .container
-  .row.movie_listing
+  .row.movie-listing
     - @videos.each do |video|
-      .col-md-6
+      - video_decorator = VideoDecorator.new(video)
+      .col-md-6.movie-listing__left-panel
         = video_tag video.link, size: "320x240", controls: true
-      .col-md-6
+      .col-md-6.movie-listing__right-panel
+        p= t('videos.title')
+        = "Shared by: #{video_decorator.shared_by}"
+        = video.upvote
+        = video.downvote
+        p= t('videos.description')

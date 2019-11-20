@@ -1,15 +1,15 @@
 class VideosController < ApplicationController
-  before_action :authorize
-
   def index
     @videos = Video.all
   end
 
   def new
+    authorize
     @video = Video.new
   end
 
   def create
+    authorize
     @video = Video.new(video_params.merge(user_id: current_user.id))
 
     if @video.save

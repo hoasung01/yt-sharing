@@ -43,3 +43,5 @@ en:
     form:
       title: Share a Youtube movie
       submit: Share
+    title: Movie Title
+    description: 'Description:'
