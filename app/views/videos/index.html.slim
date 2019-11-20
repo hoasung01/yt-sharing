@@ -5,9 +5,14 @@
       .col-md-6.movie-listing__left-panel
         iframe allowfullscreen="" frameborder="0" height="240" width="320" src="https://www.youtube.com/embed/#{video_decorator.youtube_id}"
       .col-md-6.movie-listing__right-panel
-        p= t('videos.title')
-        p= "Shared by: #{video_decorator.shared_by}"
-        .row
-          .upvote.col-md-3= "Upvote: #{video.upvote}"
-          .downvote.col-md-3= "Downvote: #{video.downvote}"
-        p= t('videos.description')
+        .movie-listing__title
+          = t('videos.title')
+        .movie-listing__shared_by
+          = "Shared by: #{video_decorator.shared_by}"
+        .movie-listing__voting
+          .upvote
+            = "Upvote: #{video.upvote}"
+          .downvote
+            = "Downvote: #{video.downvote}"
+        .movie-listing__description
+          = t('videos.description')

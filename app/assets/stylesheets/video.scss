@@ -15,4 +15,15 @@
   &__left-panel {
     text-align: right;
   }
+  &__right-panel {
+    .movie-listing__title {
+      color: red;
+    }
+    .movie-listing__voting {
+      display: flex;
+      .upvote {
+        padding-right: 10px;
+      }
+    }
+  }
 }
