@@ -3,7 +3,7 @@
     - @videos.each do |video|
       - video_decorator = VideoDecorator.new(video)
       .col-md-6.movie-listing__left-panel
-        = video_tag video.link, size: "320x240", controls: true
+        iframe allowfullscreen="" frameborder="0" height="240" width="320" src="https://www.youtube.com/embed/#{video_decorator.youtube_id}"
       .col-md-6.movie-listing__right-panel
         p= t('videos.title')
         p= "Shared by: #{video_decorator.shared_by}"
