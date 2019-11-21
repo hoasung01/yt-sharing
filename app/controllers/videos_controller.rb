@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   def index
-    @videos = Video.all
+    @videos = Video.order(:title).page params[:page]
   end
 
   def new
