@@ -9,13 +9,14 @@
           = t('videos.title')
         .movie-listing__shared_by
           = "Shared by: #{video_decorator.shared_by}"
-        .movie-listing__voting
-          .upvote
-            = video.upvote
-            img src="https://img.icons8.com/cotton/32/000000/facebook-like--v1.png"
-          .downvote
-            = video.downvote
-            img src="https://img.icons8.com/dotty/32/000000/thumbs-down.png"
+        - if current_user
+          .movie-listing__voting
+            .upvote
+              = video.upvote
+              img src="https://img.icons8.com/cotton/32/000000/facebook-like--v1.png"
+            .downvote
+              = video.downvote
+              img src="https://img.icons8.com/dotty/32/000000/thumbs-down.png"
         .movie-listing__description
           = t('videos.description')
     = paginate @videos
