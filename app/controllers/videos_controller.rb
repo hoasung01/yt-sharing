@@ -10,10 +10,9 @@ class VideosController < ApplicationController
 
   def create
     authorize
-    @video = Video.new(video_params.merge(user_id: current_user.id))
-    fetch_additional_info(@video)
+    response = CreateVideoService.new(video_params, current_user).()
 
-    if @video.save
+    if response.errors.blank?
       redirect_to videos_path
     else
       render :new
@@ -23,20 +22,6 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:link)
-  end
-
-  def fetch_additional_info(video)
-    video_decorator = VideoDecorator.new(video)
-    response = YoutubeService.new(video_decorator.youtube_id).()
-
-    unless reponse.empty?
-      video_params.merge!(
-        title: response['items'][0]['snippet']['title'],
-        description: response['items'][0]['snippet']['description'],
-        upvote: response['items'][0]['statistics']['likeCount'],
-        downvote:  response['items'][0]['statistics']['dislikeCount']
-      )
-    end
+    params.require(:video).permit(:link, :title, :description, :upvote, :downvote)
   end
 end

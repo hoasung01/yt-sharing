@@ -6,7 +6,7 @@
         iframe allowfullscreen="" frameborder="0" height="240" width="320" src="https://www.youtube.com/embed/#{video_decorator.youtube_id}"
       .col-md-6.movie-listing__right-panel
         .movie-listing__title
-          = t('videos.title')
+          = video.title
         .movie-listing__shared_by
           = "Shared by: #{video_decorator.shared_by}"
         - if current_user
@@ -18,5 +18,7 @@
               = video.downvote
               img src="https://img.icons8.com/dotty/32/000000/thumbs-down.png"
         .movie-listing__description
-          = t('videos.description')
+          =t('videos.description')
+          br
+          =video.description
     = paginate @videos
