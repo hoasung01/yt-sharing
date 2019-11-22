@@ -3,22 +3,23 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
     a.navbar-brand href="/"
       = image_tag 'logo.png'
       span Funny Movies
-    - if current_user
-      .movie-sharing-navbar
-        .form-row
-          .welcome-message
-            ="Welcome #{current_user.email}"
+    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+      - if current_user
+        .form.form-inline
+          label.welcome-message="Welcome #{current_user.email}"
           .col
             = link_to t('links.share_movie'), '/share', class: 'btn btn-info'
           .col
             = link_to t('links.logout'), '/logout', method: :delete, class: 'btn btn-danger'
-    - else
-      = form_tag '/login', class: 'login-form navbar-form navbar-right'
-        .form-row
-          .col
-            = text_field_tag :email, placeholder="#{t('registration.email')}", class: 'form-control'
-          .col
-            = password_field_tag :password, placeholder="#{t('registration.password')}", class: 'form-control'
-          .col
-            = submit_tag t('registration.submit'), class: 'btn btn-primary'
-
+      - else
+        = form_tag '/login', class: 'login-form navbar-form navbar-right'
+          .form.form-inline
+            .col
+              = text_field_tag :email, placeholder="#{t('registration.email')}", class: 'form-control'
+            .col
+              = password_field_tag :password, placeholder="#{t('registration.password')}", class: 'form-control'
+            .col
+              = submit_tag t('registration.submit'), class: 'btn btn-primary'
