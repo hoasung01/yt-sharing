@@ -1,24 +1,44 @@
-# README
+# Sharing Youtube Video
+> Remitano Test Assignment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Run test](#features)
+* [Status](#test)
+* [Contact](#contact)
 
-Things you may want to cover:
+## Screenshots
+![Example screenshot](./app/assets/images/screenshots/screen_shot_01.png)
+![Example screenshot](./app/assets/images/screenshots/screen_shot_02.png)
 
-* Ruby version
+## Technologies
+* Ruby - version 2.3.1
+* Rails - version 5.2.0
+* Database - PostgreSQL
 
-* System dependencies
+## Setup
+Describe how to install / setup your local environement / add link to demo version.
 
-* Configuration
+## Features
+List of features
 
-* Database creation
+* Register: As a new user, I want to create an account and sign in by entering the username and password for the first time.
 
-* Database initialization
+* Register: As a new user, I want to create an account and sign in by entering the username and password for the first time. (Picture 1)
 
-* How to run the test suite
+* Share movie: As a signed in user, I want to share a youtube movie by clicking “Share a movie” button (Picture 2) and filling the share form
 
-* Services (job queues, cache servers, search engines, etc.)
+* See movie list: As a visitor, I want to see a list of all shared movies. (no need to display the number of up/down votes)
 
-* Deployment instructions
+## Test
+Run a test: `rails test`
 
-* ...
+
+## Status
+Project is: _finished_
+
+## Contact
+Created by [@Nguyen Ngoc Hai](https://github.com/hoasung01/SharingKnowledge/blob/master/Interview/CV/Assets/NguyenNgocHai_CV.pdf) - feel free to contact me!
