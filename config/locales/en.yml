@@ -38,10 +38,13 @@ en:
   links:
     share_movie: Share a movie
     logout: Logout
-    youtube_url: 'Youtube URL:'
+    youtube_url: Youtube URL
   videos:
     form:
       title: Share a Youtube movie
       submit: Share
     title: Movie Title
-    description: 'Description:'
+    description: Description
+  sessions:
+    signed_in: Signed in successfully.
+    signed_out: Signed out successfully.
