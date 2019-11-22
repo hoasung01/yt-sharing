@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    if user && user.password == params[:password]
+    if user && same_password?
       session[:user_id] = user.id
       redirect_to root_path
     else
@@ -19,5 +19,9 @@ class SessionsController < ApplicationController
 
   def user
     @user ||= User.find_by_email(params[:email])
+  end
+
+  def same_password?
+    user.password == params[:password]
   end
 end
