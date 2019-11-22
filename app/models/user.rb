@@ -3,6 +3,7 @@ require 'bcrypt'
 class User < ApplicationRecord
   include BCrypt
   has_many :videos
+  validates_presence_of :email
 
   def password
     @password ||= Password.new(password_digest)
