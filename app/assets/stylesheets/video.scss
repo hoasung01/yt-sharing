@@ -1,10 +1,7 @@
 .movive-sharing-form {
   border: 1px solid black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  margin-top: 10%;
   label {
     text-align: right;
   }
