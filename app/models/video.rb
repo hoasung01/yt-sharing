@@ -3,4 +3,5 @@ class Video < ApplicationRecord
   paginates_per 5
   belongs_to :user
   validates :link, presence: true, format: { with: LINK_REGEX }
+  validates_uniqueness_of :link, scope: :user_id
 end
