@@ -65,5 +65,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails', '~> 3.2'
 gem 'bootstrap', '~> 4.1.2'
+gem 'jquery-rails', '~> 4.3'
 gem 'kaminari', '~> 1.1'
 gem 'rest-client', '~> 2.1'
