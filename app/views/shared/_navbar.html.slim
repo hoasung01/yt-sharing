@@ -1,6 +1,8 @@
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
   .container
-    a.navbar-brand href="/" Funny Movies
+    a.navbar-brand href="/"
+      = image_tag 'logo.png'
+      span Funny Movies
     - if current_user
       .movie-sharing-navbar
         .form-row
@@ -19,3 +21,4 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.static-top
             = password_field_tag :password, placeholder="#{t('registration.password')}", class: 'form-control'
           .col
             = submit_tag t('registration.submit'), class: 'btn btn-primary'
+

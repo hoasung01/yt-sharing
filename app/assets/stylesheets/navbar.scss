@@ -1,4 +1,9 @@
 .navbar {
+  .navbar-brand {
+    img {
+      height: 50px;
+    }
+  }
   .login-form {
     display: flex;
   }
