@@ -45,6 +45,7 @@ en:
       submit: Share
     title: Movie Title
     description: Description
+    created: Create a video successfully
   sessions:
     signed_in: Signed in successfully.
     signed_out: Signed out successfully.

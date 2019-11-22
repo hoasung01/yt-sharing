@@ -13,8 +13,11 @@ class VideosController < ApplicationController
     response = CreateVideoService.new(video_params, current_user).()
 
     if response.errors.blank?
+      flash[:success] = t('videos.created')
       redirect_to videos_path
     else
+      flash[:danger] = response.errors
+      @video = Video.new
       render :new
     end
   end

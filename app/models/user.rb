@@ -4,7 +4,7 @@ class User < ApplicationRecord
   include BCrypt
   EMAIL_REGEX = /\A[^@\s]+@[^@\s]+\z/
   has_many :videos
-  validates :email, presence: true, format: { with: EMAIL_REGEX }
+  validates :email, presence: true, format: { with: EMAIL_REGEX }, uniqueness: true
 
   def password
     @password ||= Password.new(password_digest)

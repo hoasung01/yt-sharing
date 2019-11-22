@@ -14,22 +14,23 @@ class CreateVideoService
   private
 
   def create_video
-    video = Video.new
-    video.link = @video_params[:link]
-    video.user_id = @current_user.id
-    response = fetch_additional_info(video)
+    video = Video.new.tap do |vid|
+      vid.link = @video_params[:link]
+      vid.user_id = @current_user.id
+      response = fetch_additional_info(vid)
 
-    unless response.empty?
-      video.title = response['items'][0]['snippet']['title']
-      video.description = response['items'][0]['snippet']['description']
-      video.upvote = response['items'][0]['statistics']['likeCount']
-      video.downvote = response['items'][0]['statistics']['dislikeCount']
+      unless response.empty?
+        vid.title = response['items'][0]['snippet']['title']
+        vid.description = response['items'][0]['snippet']['description']
+        vid.upvote = response['items'][0]['statistics']['likeCount']
+        vid.downvote = response['items'][0]['statistics']['dislikeCount']
+      end
     end
 
     if video.save
       @video = video
     else
-      @errors = video.errors.full_messages
+      @errors = video.errors.full_messages.to_sentence
     end
   end
 
