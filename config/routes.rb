@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: :create
   resources :videos, only: [:index, :create]
 
   root 'videos#index'
