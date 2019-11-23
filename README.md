@@ -6,7 +6,8 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
-* [Run test](#features)
+* [Run Test](#test)
+* [Start App](#start)
 * [Status](#test)
 * [Contact](#contact)
 
@@ -15,7 +16,7 @@
 ![Example screenshot](./app/assets/images/screenshots/screen_shot_02.png)
 
 ## Technologies
-* Ruby - version 2.3.1
+* Ruby - version 2.4.9
 * Rails - version 5.2.0
 * Database - PostgreSQL
 
@@ -33,9 +34,12 @@ List of features
 
 * See movie list: As a visitor, I want to see a list of all shared movies. (no need to display the number of up/down votes)
 
-## Test
-Run a test: `rails test`
+## Run Test
+Run a test: `bundle exec rails test`
 
+
+## Start App
+Start application: `bundle exec rails s`
 
 ## Status
 Project is: _finished_
