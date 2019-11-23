@@ -10,7 +10,7 @@ class VideoDecorator < SimpleDelegator
   end
 
   def youtube_id
-    match_regex = model.link.match(/\?v=([\D\d]*)/)
+    match_regex = model.link.match(/\?v=([\D\d][^\&]*)/)
     match_regex ? match_regex[1]: DEFAULT_ID
   end
 
