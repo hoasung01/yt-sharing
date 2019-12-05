@@ -12,8 +12,8 @@
 * [Contact](#contact)
 
 ## Screenshots
-![Example screenshot](./app/assets/images/screenshots/screen_shot_01.png)
-![Example screenshot](./app/assets/images/screenshots/screen_shot_02.png)
+![Example screenshot](./app/assets/images/screenshots/screenshot_01.png)
+![Example screenshot](./app/assets/images/screenshots/screenshot_02.png)
 
 ## Technologies
 * Ruby - version 2.4.9
